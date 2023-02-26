@@ -49,4 +49,12 @@ class SolutionsTest {
 
     }
 
+    @Test
+    void check1_4Task() {
+        var str = "btactcobbaaaooiib";
+        var actualResult = solutions.isPermutationOfPalindrome(str);
+        var expectedResult = true;
+        assertThat(actualResult).isEqualTo(expectedResult);
+    }
+
 }

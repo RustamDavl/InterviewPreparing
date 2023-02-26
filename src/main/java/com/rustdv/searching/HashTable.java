@@ -6,8 +6,11 @@ public class HashTable<T> {
 
     private MLinkedList<T>[] elements;
 
+    private int amountOfLists;
+
     public HashTable() {
         elements = new MLinkedList[997];
+        amountOfLists = 0;
     }
 
     private int hash(T value) {
@@ -18,6 +21,7 @@ public class HashTable<T> {
         int hash = hash(value);
         if (elements[hash] == null) {
             elements[hash] = new MLinkedList<>(value);
+            amountOfLists++;
         } else {
             var current = elements[hash].getFirst();
             while (current.getNext() != null) {
@@ -30,6 +34,10 @@ public class HashTable<T> {
             current.setNext(node);
 
         }
+    }
+
+    public int getAmountOfLists() {
+        return amountOfLists;
     }
 
     public void displayElementsByKey(T key) {

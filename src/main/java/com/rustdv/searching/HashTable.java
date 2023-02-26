@@ -47,4 +47,9 @@ public class HashTable<T> {
 
     }
 
+    public int getListSizeByKey(T val) {
+        var hash = hash(val);
+        return elements[hash].size();
+    }
+
 }
